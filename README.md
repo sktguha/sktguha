@@ -19,5 +19,5 @@ Hi 👋 , I have contributed code to both official **React** and also **Redux**,
 - https://github.com/facebook/jest/pull/10842
 
 More planned for these and other popular open source projects.
-####About me
+#### About me
 MTS Frontend at Salesforce. Experienced JavaScript Developer for 5+ years with good knowledge of its quirks and good parts. In a love/hate relationship with the language, owing to its odd quirks on one hand and its good functional and powerful expressive capabillities on the other hand. Working in React and Redux stack. I frequently go around reading the codebase of popular open-source projects like React, Redux(have PRs merged to both of them, check above) , Underscore, Lodash etc.
