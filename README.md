@@ -1,6 +1,6 @@
 ### Saikat Guha (sktguha@gmail.com, linkedin: https://www.linkedin.com/in/sktguha/)
 
-Hi 👋 , I have contributed code to official **React** and also **Redux**, **Jest** the most popular UI libraries. <br/>
+Hi 👋 , I have contributed code to official **React** and also **Redux**, **Jest**, the most popular UI libraries. <br/>
 
 #### React PRs
 
