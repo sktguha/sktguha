@@ -110,7 +110,7 @@
 
             // Agreement text template
           
-          const agreementText=`
+          let agreementText=`
         
 RENTAL AGREEMENT 
 This Agreement of Rental made on this, **{todo_day}st** Day of **{todo_month} {todo_year}** at Bangalore BETWEEN
@@ -128,25 +128,25 @@ LEASE PERIOD:
 That the lease is for the period from **{todo_lease_start_date}** to **{todo_lease_end_date}**
 
 RENT:
-That the ‘LESSOR’ and the ‘LESSEE’ agreed that the monthly rental payable by the LESSEE to the LESSOR is Rs. **{todo_rent_amount}**/- (Rupees **{todo_rent_amount_words}** Only).
+That the LESSOR and the LESSEE agreed that the monthly rental payable by the LESSEE to the LESSOR is Rs. **{todo_rent_amount}**/- (Rupees **{todo_rent_amount_words}** Only).
 
 SECURITY DEPOSIT:
-That the ‘LESSEE’ paid to the ‘LESSOR’ a sum of Rs. **{todo_security_deposit}**/- as a security deposit.  
-The ‘LESSEE’ agreed that the security deposit is free from interest, and the ‘LESSOR’ agrees to refund the same to the ‘LESSEE’ after vacating the premises and handing over the keys. The Lessor is entitled to deduct any unpaid rents and other dues towards painting and repairs/damages to the premises and fixtures from the security deposit.
+That the LESSEE paid to the LESSOR a sum of Rs. **{todo_security_deposit}**/- as a security deposit.  
+The LESSEE agreed that the security deposit is free from interest, and the LESSOR agrees to refund the same to the LESSEE after vacating the premises and handing over the keys. The Lessor is entitled to deduct any unpaid rents and other dues towards painting and repairs/damages to the premises and fixtures from the security deposit.
 
 TERMINATION OF LEASE:
-Both the ‘LESSOR’ & ‘LESSEE’ are entitled to terminate the lease without assigning any reason at any time upon serving one month's clear-advance notice in writing, ending with 30/31st of a month, of his intention to do so to the other party. If the LESSEE fails to give one month’s clear notice to the LESSOR, the LESSEE has agreed to pay one month’s rent in lieu thereof.
+Both the LESSOR & LESSEE are entitled to terminate the lease without assigning any reason at any time upon serving one month's clear-advance notice in writing, ending with 30/31st of a month, of his intention to do so to the other party. If the LESSEE fails to give one month’s clear notice to the LESSOR, the LESSEE has agreed to pay one month’s rent in lieu thereof.
 
 ---
 
 The LESSEE hereby covenants with the ‘LESSOR’ as follows:
-- That the ‘LESSEE’ has agreed to take the above premises on a monthly rental of Rs. **{todo_rent_amount}**/- as stated above, for his residential use only and not for any other purpose. The LESSEE covenants that he and his family consisting of his wife and **{todo_family_adults}** adult(s) and **{todo_family_kids}** kid(s), not exceeding **{todo_family_total}** persons in total, are entitled to live in the apartment. If more than **{todo_extra_adults}** adult person(s) stays in the house, the LESSEE agreed to pay an extra amount of Rs. 500/- per head per month.
-- That the ‘LESSEE’ has also agreed to promptly pay the above rent on or before the 5th of every month. In case of any default, Rs. 100/- will be charged for the delay of each day. Rent is payable for a completed month on the subsequent month and not in advance. The ‘LESSEE’ further agrees that in the event of default of payment of rent for one month, the ‘LESSOR’ is entitled to terminate the lease agreement, and the ‘LESSEE’ will not have the right to enjoy residency after the termination of the agreement.
-- That the ‘LESSEE’ covenants that they will not sublet the leased premises to any other person(s). In the event of such an occurrence, the ‘LESSEE’ agrees that the ‘LESSOR’ is empowered to evict the said trespassers without notice to the ‘LESSEE’.
+- That the LESSEE has agreed to take the above premises on a monthly rental of Rs. **{todo_rent_amount}**/- as stated above, for his residential use only and not for any other purpose. The LESSEE covenants that he and his family consisting of his wife and **{todo_family_adults}** adult(s) and **{todo_family_kids}** kid(s), not exceeding **{todo_family_total}** persons in total, are entitled to live in the apartment. If more than **{todo_extra_adults}** adult person(s) stays in the house, the LESSEE agreed to pay an extra amount of Rs. 500/- per head per month.
+- That the LESSEE has also agreed to promptly pay the above rent on or before the 5th of every month. In case of any default, Rs. 100/- will be charged for the delay of each day. Rent is payable for a completed month on the subsequent month and not in advance. The ‘LESSEE’ further agrees that in the event of default of payment of rent for one month, the ‘LESSOR’ is entitled to terminate the lease agreement, and the ‘LESSEE’ will not have the right to enjoy residency after the termination of the agreement.
+- That the LESSEE covenants that they will not sublet the leased premises to any other person(s). In the event of such an occurrence, the ‘LESSEE’ agrees that the ‘LESSOR’ is empowered to evict the said trespassers without notice to the ‘LESSEE’.
 
 ---
 
-The ‘LESSEE’ undertakes to maintain the premises and common areas in good condition and hand them over in their original condition to the ‘LESSOR’ at the time of vacating the premises.
+The LESSEE undertakes to maintain the premises and common areas in good condition and hand them over in their original condition to the ‘LESSOR’ at the time of vacating the premises.
 
 The LESSEE shall pay to the LESSOR one month’s rent at the time of vacating the premises towards the cost of repainting the Schedule premises apart from the actual charges towards damages, if any.
 
@@ -212,7 +212,31 @@ In witness whereof, the parties hereto have executed these presents at Bangalore
 **LESSEE**
 
 `;  
-            
+          //  let agreementText = /* your agreement text here */;
+
+agreementText = agreementText.replace(/{todo_day}/g, day)
+                             .replace(/{todo_month}/g, month)
+                             .replace(/{todo_year}/g, year)
+                             .replace(/{todo_lessee_name}/g, lessee_name)
+                             .replace(/{todo_lessee_father_name}/g, lessee_father_name)
+                             .replace(/{todo_lessee_age}/g, lessee_age)
+                             .replace(/{todo_lessee_address}/g, lessee_address)
+                             .replace(/{todo_lessee_mobile}/g, lessee_mobile)
+                             .replace(/{todo_lessee_occupation}/g, lessee_occupation)
+                             .replace(/{todo_lessee_company}/g, lessee_company)
+                             .replace(/{todo_lessee_aadhaar}/g, lessee_aadhaar)
+                             .replace(/{todo_lease_start_date}/g, lease_start_date)
+                             .replace(/{todo_lease_end_date}/g, lease_end_date)
+                             .replace(/{todo_rent_amount}/g, rent_amount)
+                             .replace(/{todo_rent_amount_words}/g, rent_amount_words)
+                             .replace(/{todo_security_deposit}/g, security_deposit)
+                             .replace(/{todo_family_adults}/g, family_adults)
+                             .replace(/{todo_family_kids}/g, family_kids)
+                             .replace(/{todo_family_total}/g, family_total)
+                             .replace(/{todo_extra_adults}/g, extra_adults)
+                             .replace(/{todo_flat_number}/g, flat_number)
+                             .replace(/{todo_floor_number}/g, floor_number);
+        
             // Create a blob for the file and download
             const blob = new Blob([agreementText], { type: "text/plain" });
             const link = document.createElement("a");
