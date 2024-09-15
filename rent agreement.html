@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Agreement Generator</title>
+</head>
+<body>
+
+    <h1>Rental Agreement Generator</h1>
+
+    <form id="rentalForm">
+        <label for="day">Day:</label>
+        <input type="text" id="day" name="day"><br><br>
+
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month"><br><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year"><br><br>
+
+        <label for="lessee_name">Lessee Name:</label>
+        <input type="text" id="lessee_name" name="lessee_name"><br><br>
+
+        <label for="lessee_father_name">Lessee's Father Name:</label>
+        <input type="text" id="lessee_father_name" name="lessee_father_name"><br><br>
+
+        <label for="lessee_age">Lessee Age:</label>
+        <input type="text" id="lessee_age" name="lessee_age"><br><br>
+
+        <label for="lessee_address">Lessee Address:</label>
+        <input type="text" id="lessee_address" name="lessee_address"><br><br>
+
+        <label for="lessee_mobile">Lessee Mobile:</label>
+        <input type="text" id="lessee_mobile" name="lessee_mobile"><br><br>
+
+        <label for="lessee_occupation">Lessee Occupation:</label>
+        <input type="text" id="lessee_occupation" name="lessee_occupation"><br><br>
+
+        <label for="lessee_company">Lessee Company:</label>
+        <input type="text" id="lessee_company" name="lessee_company"><br><br>
+
+        <label for="lessee_aadhaar">Lessee Aadhaar:</label>
+        <input type="text" id="lessee_aadhaar" name="lessee_aadhaar"><br><br>
+
+        <label for="lease_start_date">Lease Start Date:</label>
+        <input type="text" id="lease_start_date" name="lease_start_date"><br><br>
+
+        <label for="lease_end_date">Lease End Date:</label>
+        <input type="text" id="lease_end_date" name="lease_end_date"><br><br>
+
+        <label for="rent_amount">Rent Amount:</label>
+        <input type="text" id="rent_amount" name="rent_amount"><br><br>
+
+        <label for="rent_amount_words">Rent Amount (In Words):</label>
+        <input type="text" id="rent_amount_words" name="rent_amount_words"><br><br>
+
+        <label for="security_deposit">Security Deposit:</label>
+        <input type="text" id="security_deposit" name="security_deposit"><br><br>
+
+        <label for="family_adults">Number of Adults in Family:</label>
+        <input type="text" id="family_adults" name="family_adults"><br><br>
+
+        <label for="family_kids">Number of Kids in Family:</label>
+        <input type="text" id="family_kids" name="family_kids"><br><br>
+
+        <label for="family_total">Total Family Members:</label>
+        <input type="text" id="family_total" name="family_total"><br><br>
+
+        <label for="extra_adults">Extra Adults:</label>
+        <input type="text" id="extra_adults" name="extra_adults"><br><br>
+
+        <label for="flat_number">Flat Number:</label>
+        <input type="text" id="flat_number" name="flat_number"><br><br>
+
+        <label for="floor_number">Floor Number:</label>
+        <input type="text" id="floor_number" name="floor_number"><br><br>
+
+        <button type="button" onclick="generateAgreement()">Generate Agreement</button>
+
+    </form>
+
+    <script>
+        function generateAgreement() {
+            // Retrieve input values
+            const day = document.getElementById("day").value;
+            const month = document.getElementById("month").value;
+            const year = document.getElementById("year").value;
+            const lessee_name = document.getElementById("lessee_name").value;
+            const lessee_father_name = document.getElementById("lessee_father_name").value;
+            const lessee_age = document.getElementById("lessee_age").value;
+            const lessee_address = document.getElementById("lessee_address").value;
+            const lessee_mobile = document.getElementById("lessee_mobile").value;
+            const lessee_occupation = document.getElementById("lessee_occupation").value;
+            const lessee_company = document.getElementById("lessee_company").value;
+            const lessee_aadhaar = document.getElementById("lessee_aadhaar").value;
+            const lease_start_date = document.getElementById("lease_start_date").value;
+            const lease_end_date = document.getElementById("lease_end_date").value;
+            const rent_amount = document.getElementById("rent_amount").value;
+            const rent_amount_words = document.getElementById("rent_amount_words").value;
+            const security_deposit = document.getElementById("security_deposit").value;
+            const family_adults = document.getElementById("family_adults").value;
+            const family_kids = document.getElementById("family_kids").value;
+            const family_total = document.getElementById("family_total").value;
+            const extra_adults = document.getElementById("extra_adults").value;
+            const flat_number = document.getElementById("flat_number").value;
+            const floor_number = document.getElementById("floor_number").value;
+
+            // Agreement text template
+            const agreementText = `
+RENTAL AGREEMENT
+
+This Agreement of Rental made on this, ${day}st Day of ${month} ${year} at Bangalore BETWEEN
+
+Saikat Guha, S/O: Sujit Chandra Guha aged about 31 years, R/o Flat 303, Samriddhi, Plot 21, Balaji Lake Gardens, Dharmarayaswamy Temple Road, Ramagondanahalli Village, Bangalore-560066. Hereinafter called the “LESSOR” with respect to Schedule premises and the fixtures described in the ANNEXURE.
+
+AND
+
+${lessee_name}, S/o Mr. ${lessee_father_name}, aged about ${lessee_age} years, permanent resident of ${lessee_address}. Mobile: ${lessee_mobile}. Presently working as ${lessee_occupation} at ${lessee_company}. Aadhaar No: ${lessee_aadhaar}. Hereinafter called the “LESSEE”.
+
+LEASE PERIOD:
+That the lease is for the period from ${lease_start_date} to ${lease_end_date}.
+
+RENT:
+That the LESSOR and the LESSEE agreed that the monthly rental payable by the LESSEE to the LESSOR is Rs. ${rent_amount}/- (Rupees ${rent_amount_words} Only).
+
+SECURITY DEPOSIT:
+That the LESSEE paid to the LESSOR a sum of Rs. ${security_deposit}/- as a security deposit.
+
+The LESSEE agrees to maintain the premises in good condition and will only use the property for residential purposes.
+
+SCHEDULE:
+Flat No. ${flat_number}, ${floor_number}nd floor of SAMRAT NILAYA, Plot 29, Balaji Lake Gardens, Dharmarayaswamy Temple Road, Ramagondanahalli Village, Bangalore-560066.
+
+In witness whereof, the parties hereto have executed these presence at Bangalore on this day, month and year mentioned above in the presence of:
+`;
+
+            // Create a blob for the file and download
+            const blob = new Blob([agreementText], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "Rental_Agreement.txt";
+            link.click();
+        }
+    </script>
+
+</body>
+</html>
