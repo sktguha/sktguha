@@ -236,7 +236,8 @@ agreementText = agreementText.replace(/{todo_day}/g, day)
                              .replace(/{todo_extra_adults}/g, extra_adults)
                              .replace(/{todo_flat_number}/g, flat_number)
                              .replace(/{todo_floor_number}/g, floor_number);
-        
+
+            agreementText = agreementText.replace('/**/g',"");
             // Create a blob for the file and download
             const blob = new Blob([agreementText], { type: "text/plain" });
             const link = document.createElement("a");
