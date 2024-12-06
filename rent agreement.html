@@ -8,16 +8,16 @@
 <body>
 
     <h1>Rental Agreement Generator</h1>
-<button onclick="(function() { 
+<button onclick=`(function() { 
     let inputValues = {}; 
     document.querySelectorAll('input').forEach(input => { 
         inputValues[input.name || input.id || input.type] = input.value; 
     }); 
     window.prompt('Collected Input Values:', JSON.stringify(inputValues)); 
-})()">Copy already entered values( select all and copy)</button>
+})()`>Copy already entered values( select all and copy)</button>
     <br/>
     <br /> <br /><br />
-    <button onclick="(function() { 
+    <button onclick=`(function() { 
     let json = window.prompt('Enter JSON to populate input fields:'); 
     if (json) { 
         try { 
@@ -32,7 +32,7 @@
             window.alert('Invalid JSON provided!'); 
         } 
     } 
-})()">Fill Inputs with entered values</button>
+})()`>Fill Inputs with entered values</button>
     <form id="rentalForm">
         day month year should be in words , September for example. lease start and end should be numberic like 12.1.2024 , 31.10.2024
         todo_floor_number should be like "2nd" or "3rd" like this 
