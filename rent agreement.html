@@ -10,10 +10,10 @@
     <h1>Rental Agreement Generator</h1>
 <button onclick="(function() { 
     let inputValues = {}; 
-    document.querySelectorAll(`input`).forEach(input => { 
+    document.querySelectorAll('input').forEach(input => { 
         inputValues[input.name || input.id || input.type] = input.value; 
     }); 
-    window.prompt(`Collected Input Values:`, JSON.stringify(inputValues)); 
+    window.prompt('Collected Input Values:', JSON.stringify(inputValues)); 
 })()">Copy already entered values( select all and copy)</button>
     <br/>
     <br /> <br /><br />
