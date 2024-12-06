@@ -13,8 +13,8 @@
     document.querySelectorAll('input').forEach(input => { 
         inputValues[input.name || input.id || input.type] = input.value; 
     }); 
-    window.alert(JSON.stringify(inputValues)); 
-})()">copy already saved values</button>
+    window.prompt('Collected Input Values:', JSON.stringify(inputValues)); 
+})()">Copy already entered values</button>
     
     <form id="rentalForm">
         day month year should be in words , September for example. lease start and end should be numberic like 12.1.2024 , 31.10.2024
