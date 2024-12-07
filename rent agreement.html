@@ -295,13 +295,21 @@ agreementText = agreementText.replace(/{todo_day}/g, day)
                              .replace(/{todo_floor_number}/g, floor_number);
 
             agreementText = agreementText.replace(/\*\*/g, "");
-            agreementText = agreementText.replace(/â€™/g, "'");
-            // Create a blob for the file and download
-            const blob = new Blob([agreementText], { type: "text/plain" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "Rental_Agreement.txt";
-            link.click();
+            // Replace specific problematic characters
+agreementText = agreementText.replace(/â€™/g, "'");
+
+// Replace other potential encoding issues (optional)
+agreementText = agreementText.replace(/â€œ/g, '"').replace(/â€�/g, '"').replace(/â€“/g, '-');
+
+// Ensure the text is properly normalized
+agreementText = agreementText.normalize("NFC");
+
+// Create a blob for the file and download
+const blob = new Blob([agreementText], { type: "text/plain;charset=utf-8" });
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "Rental_Agreement.txt";
+link.click();
         }
     </script>
 
